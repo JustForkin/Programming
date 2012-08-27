@@ -1,0 +1,44 @@
+
+public class SavingsAccount {
+
+	public SavingsAccount(String anOwner, double aRate)
+	{
+		
+	}
+	
+	public String getName()
+	{
+		return "";
+	}
+	
+	public double getBalance()
+	{
+		return -1;
+	}
+	
+	public double getRate()
+	{
+		return -1;
+	}
+	
+	public ArrayList<Double> getTransactions()
+	{
+		return null;
+	}
+	
+	public void withdraw(double amount)
+	{
+		
+	}
+	
+	public void deposit(double amount)
+	{	
+		
+	}
+	
+	public void accrueInt()
+	{
+		
+	}
+	
+}

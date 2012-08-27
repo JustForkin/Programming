@@ -1,0 +1,39 @@
+<?php 
+session_start(); 
+include "code_chart.php";
+//checkNotLogin();  
+?>
+
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="chart_style.css" />
+		<title>
+			Welcome <?php echo $_SESSION['username']; ?>
+		</title>  
+		
+			<a href="logout.php" class="rightlink">logout</a>
+		
+	</head>
+
+	<body>
+		
+	
+
+		<br/>
+		<br/>
+<div id="stylized" class="myform" > 
+		<form id="edit_account_button" action="main_page.php" method="get" id="form">
+		<button type="submit"  name="edit_account"> Edit user account </button>
+		</form>
+<div class="spacer" > </div> 
+		<form  id="view_data_button" action="main_page.php" method="get" id="form">
+		<button type="submit" name="view_data" > View sleep data </button>
+		</form>
+<div class="spacer" > </div> 
+		<form  id="edit_sleep_settings" action="main_page.php" method="get" id="form">
+		<button type="submit" name="edit_sleep" > Edit sleep settings </button>
+		</form>
+</div>
+
+	</body>
+</html>

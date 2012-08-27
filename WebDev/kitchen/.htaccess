@@ -1,0 +1,7 @@
+AuthName "Under Development."
+     AuthType Basic
+     AuthUserFile /var/www/kitchen/.htpasswd
+     #AuthGroupFile /var/www/kitchen/.htgroup
+     require user user1
+
+

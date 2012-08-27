@@ -1,0 +1,13 @@
+
+public class EvenOddTester {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Game myGame = new Game();
+		myGame.playGame(100);
+
+	}
+
+}

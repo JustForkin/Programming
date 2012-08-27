@@ -1,0 +1,81 @@
+function [ prob ] = Quantum1( j, k, m )
+%UNTITLED Summary of this function goes here
+%   Detailed explanation goes here
+
+    jBin = dec2binVect(j, k);
+    mBin = dec2binVect(m, k);
+
+    state0 = [1; 0];
+    state1 = [0; 1];
+
+    X = [0 1; 1 0];
+    Y = [0 -1i; 1i 0];
+    Z = [1 0; 0 -1];
+    H = [1 1; 1 -1]/2^.5;
+    S = [1 0; 0 1i];
+    T = [1 0; 0 exp(1i*pi/4)];
+
+    %numTerms = max(length(jj), length(mm));
+    
+    temp = 1;
+    for  i=1:k %numTerms,
+        %jj = jBin((k+1)-i)
+        if jBin((k+1)-i) == 0
+            bra = state0';
+        else bra = state1';
+        end
+
+        %mm = mBin((k+1)-i)
+        if mBin((k+1)-i) == 0
+            ket = state0;
+        else ket = state1;
+        end
+
+        gate = getGate(i);
+        
+        temp = temp * (bra * gate * ket);
+
+    end
+    
+    prob = abs(temp)^2;
+    
+    str = sprintf('The probability to measure j=%d in a k=%d qubit system on input m=%d is: %d.', j, k, m, prob);
+    disp(str);
+
+    function [ gate ] = getGate( n )
+        n = mod(n, 6);
+        if n == 1
+            gate = X;
+        elseif n == 2
+            gate = Y;
+        elseif n == 3
+            gate = Z;
+        elseif n == 4
+            gate = H;
+        elseif n == 5
+            gate = S;
+        else  %if n == 0\6
+            gate = T;
+        end
+    end
+
+    function [ bin ] = dec2binVect( decNum, nBits )
+        bin = zeros(1, nBits);
+        ii = 1;
+        while ii <= nBits,
+            
+            if decNum == 0 
+                bin(ii) = 0;
+            else
+                remain = mod(decNum, 2); 
+                bin(ii) = remain;
+                decNum = floor(decNum/2);
+            end
+        ii=ii+1;
+        end
+       
+        
+    end
+
+end
+

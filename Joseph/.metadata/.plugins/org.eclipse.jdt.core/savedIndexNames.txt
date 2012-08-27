@@ -1,0 +1,12 @@
+INDEX VERSION 1.126+C:\Program Files\eclipse\projects\Joseph\.metadata\.plugins\org.eclipse.jdt.core
+667286050.index
+2413194130.index
+120107252.index
+3327495609.index
+1755153892.index
+581975821.index
+4205092828.index
+1156803821.index
+2866803658.index
+1991790983.index
+3309397531.index

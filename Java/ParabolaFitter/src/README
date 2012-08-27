@@ -1,0 +1,30 @@
+Michael Rubin   -   mnr2114
+Programming hw#4
+
+To run my program, type
+	javac *.java 
+from inside the src/ folder to compile, and then type
+	java ParabolaTester <inputFile>
+to run my program, where <inputFile> contains m, C, D, E on different lines in that order
+
+My algorithm works by computing A_trans * A,  A_trans * b, and then uses them 
+to solve for x(^) with GJ elim since
+The partial derivatives of ||Ax-b||^2 = 0 when
+(A_trans) * (A) * (x_^) = (A_trans) * (b)
+
+sample input:
+~~~~~~~~~~~~
+20
+5
+6
+7
+
+output:  m, old coefficients, new coefficients
+~~~~~~
+m: 20
+C: 5.0
+D: 6.0
+E: 7.0
+C': 5.072019676344359
+D': 5.9498128335046125
+E': 7.003060149663572

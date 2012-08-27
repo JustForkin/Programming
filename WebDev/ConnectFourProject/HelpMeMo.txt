@@ -1,0 +1,23 @@
+Files I need for this project:
+code_master - Helps me connect to the MySQL database and handles things like page forwarding
+code_board - Handles things that change the game, like all the long code to reset the board, check for win, set a peice etc.
+play - The page that the users will see that will JUST display the information of what is going on and ask them what they want to do
+C4Submit - The page that is the action for the forms on play.php. This page gets the requested move and tries to execute it using the code in the code_board.php. It will then redirect back to play.php so the user can see what happened.
+
+
+$_GET
+
+play.php?color=R for red 
+
+
+<?php
+
+//1. Get the move
+
+//2. Try to execute the move
+
+//3. Change the turn if the game is not over and the move was valid
+
+//4. Redirect back to play page.
+
+?>

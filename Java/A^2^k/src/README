@@ -1,0 +1,11 @@
+To compile and run my (java) program in cunix, run the commands 
+'javac *.java' 
+and then 
+'java A2kTester inputFile outputFile'  
+from within the A^2^k/src directory 
+(or wherever you choose to put the .java and text [input/README/etc] files).
+
+My program's main method (located in A2kTester.java) creates a SquareMatrix (n*n) and 
+then squares it 'k' times in order to produce A^2^k with only 'k' multiplications.  
+It uses 3 nested for-loops to perform the multiplication which costs O(n^3).  
+Both classes are commented with JavaDoc.

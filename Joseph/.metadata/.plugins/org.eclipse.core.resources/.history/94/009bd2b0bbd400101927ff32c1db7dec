@@ -1,0 +1,7 @@
+import java.util.Scanner;
+
+
+public class Game {
+	Scanner sc = new Scanner(System.in);
+	System.out.print("1 for human vs. computer, 2 for computer vs. computer.");
+}

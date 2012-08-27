@@ -1,0 +1,212 @@
+/*  <link rel="stylesheet" type="text/css" href="chart_style.css" />       link to this page.  put it in the '<head>' tag of files  */
+
+body{
+font-family:  "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+font-size:100%;
+background-color:#99EEF0;
+}
+
+form, button{border:0; margin:0; padding:0;} 
+
+
+#PageTop{    /* ----------- h1 ----------- */
+font-size:2.2em;
+color:gray;
+background-color:palegreen;
+border-color:gray;
+border-style:solid;
+text-align:center;
+text-transform:capitalize;
+margin:auto;
+width:350;
+}
+
+h2 {
+font-size:1.675em;
+color:gray;
+background-color:palegreen;
+border-color:gray;
+border-style:solid;
+text-align:center;
+text-transform:capitalize;
+margin:auto;
+width:270;
+}
+
+  .spacer{clear:both; height:25px;}  /* now used to create space where editaccount confirmation messages are posted 
+											(and placeholding space when msgs are not there)*/
+
+/* ----------- My Form ----------- */   
+.myform{
+position:relative; 
+top: 10;
+margin: 0px;
+width:360px;      /************************changeable*/
+padding:10px;  
+padding-bottom:12px;  /*no need for spacer*/
+//margin-bottom:0;
+}
+
+.form{
+float:left;
+}
+
+
+
+/* ----------- stylized ----------- */
+#stylized{
+border:solid 4px gray;
+background-color:palegreen;   
+}
+#stylized h3 {      /*title of form */
+//font-size:14px;
+font-weight:bold;
+margin-bottom:8px;
+margin-top:0px;
+text-align:center;
+}
+/* #stylized p{
+font-size:11px;
+color:#666666;
+margin-bottom:20px;
+border-bottom:solid 1px #b7ddf2;
+padding-bottom:10px;
+} */
+#stylized label{  /*username, password, etc */
+display:block;
+//font-weight:bold;
+text-align:right;
+width:190px;             /************************changeable*/
+float:left;
+//line-height:2; 
+margin: 2 2 20 5;
+height:25;
+
+}
+ #stylized h4{  /*gray text*/
+color:#666666;
+display:block;
+font-size:11px;
+font-weight:normal;
+text-align:right;
+width:190;                /************************changeable - make it same as label width*/
+//padding:auto; margin:auto; 
+//border:auto;
+} 
+#stylized input{
+float:left;
+font-size:12px;
+//padding:2 2 2 80 ; 
+border:solid 2px #aacfe4;
+width:150px;                      /************************changeable*/
+height:27px;
+margin:2px 2px 20px 5px;  /*Top Right Bottom Left*/
+background:#bfbfbf;
+color:#212121;
+border-color:#212121;
+//line-height:1; 
+}
+#stylized input:focus {
+background-color:#ffffff;
+}
+#stylized input:hover {
+background-color:lightpink;
+}
+
+#stylized button{
+clear:both;
+//margin-left:16;
+//margin-right:16;
+width:100%;
+height:27px;
+background-color:#bfbfbf;
+text-align:center;
+line-height:23px;
+color: black;
+font-size:90%;
+//font-weight:bold;
+border-color:black;
+border-width:2px;
+border-style:solid;
+//padding: 0px;
+}
+#stylized button:hover{
+background-color:lightpink;
+}
+
+.small{
+font-size:smaller;
+}
+
+.underForm{
+position: relative;
+top: 10;
+width:360px;      /************************changeable*/
+margin:0;
+//font-size:smaller;
+}
+#bottom .left{
+position: absolute;
+top:5;
+left:5%;
+//font-size:smaller;
+text-align:left;
+//width:45%;
+}
+#bottom .right{
+position: absolute;
+top:5;
+left:55%;
+//font-size:smaller;
+text-align:left;
+float:right;
+//display: ;
+//width:45%;
+}
+/* #bottom a{
+top:10;
+margin-left:10px;
+font-size:smaller;
+margin-right: 40px;
+} */
+#bottom #bar{
+position: absolute;
+top: 10;
+left:50%;
+//font-size:smaller; 
+background-color:gray; 
+height:32; 
+width:5;
+}
+
+
+/* ----------- links ----------- */
+a.leftlink{
+position:absolute;
+top:10; left:10;
+}
+a.rightlink{
+position:absolute;
+top:10; right:10;
+}
+
+
+a {
+background-color:#99EEF0;
+}
+a:link {color:gray;      /* unvisited link       #00FF00        */
+font-size:smaller;
+text-decoration:none;
+} 
+a:visited {color:gray;   /* visited link      #00FF00                 */
+font-size:smaller;
+text-decoration:underline;
+}
+a:hover {color:lightpink;  /* mouse over link */
+font-size:smaller;
+text-decoration:underline;
+} 
+a:active {color:black;   /* selected link */
+font-size:smaller;
+text-decoration:underline;
+}

@@ -1,0 +1,8 @@
+function [] = PEtester()
+    U1 = [1 0; 0 -1];
+    u1 = [0;1];
+    QPhaseEstim(U1, u1, 2, 0.25);
+    
+    U2 = [exp(1i*pi/2
+    
+end

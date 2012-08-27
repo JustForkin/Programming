@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+
+
+public class Player {
+	public static final boolean HUMAN = true;
+	public static final boolean COMPUTER = false;
+	private int chosenNumber;
+	private boolean isHuman;
+	public Player()
+	{
+		isHuman = HUMAN;
+	}
+	
+	public Player(int thresh)
+	{
+		isHuman = COMPUTER;
+		compThreshold = thresh;
+	}
+	
+	private int chooseHumanNumber()
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Pick 1 or 2: ");
+		chosenNumber = sc.nextInt();
+		return chosenNumber;
+	}
+
+	int compThreshold;
+	private int chooseCompNumber()
+	{
+		double rand = Math.random();
+		if (rand > compThreshold)
+		{
+			chosenNumber = 2;
+		}
+		else
+		{
+			chosenNumber = 1;
+		}
+		return chosenNumber;
+	}
+	
+}

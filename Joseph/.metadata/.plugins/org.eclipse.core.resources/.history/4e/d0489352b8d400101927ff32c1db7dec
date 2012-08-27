@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+
+public class Player {
+	private int chosenNumber;
+	private int chooseHumanNumber()
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Pick 0 or 1: ");
+		chosenNumber = sc.nextInt();
+		return chosenNumber;
+	}
+
+	int compThreshold;
+	private int chooseCompNumber()
+	{
+		double rand = Math.random();
+		if (rand > compThreshold)
+		{
+			chosenNumber = 1;
+		}
+		else
+		{
+			chosenNumber = 0;
+		}
+		return chosenNumber;
+	}
+	
+}

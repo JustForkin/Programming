@@ -1,0 +1,96 @@
+Michael Rubin    mnr2114
+Programming #3
+
+To run my program, type
+	javac *.java
+from inside the src folder to compile the java files, and then type
+	java MatrixTester <inputFile>
+to run the program where <inputFile> is the matrix you wish to solve
+
+
+My program will solve the Ax=b system and output to the terminal each step along the way.
+I use half-pivoting to reduce the floating point errors my program will come across.
+
+
+EXAMPLE SOLUTIONS  (My actual program itself outputs each step along the way to the solution)
+
+1) Infinite Solutions:
+~input:
+4
+7
+1 1 1 1 1 1 1
+2 2 2 2 2 2 2
+3 3 3 3 3 3 3
+4 4 4 4 4 4 4
+1
+2
+3
+4
+~output:
+There are infinite solutions.
+Particular solution:
+1.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+
+Special solutions (as column vectors):
+-1.0   -1.0   -1.0   -1.0   -1.0   -1.0   
+1.0   0.0   0.0   0.0   0.0   0.0   
+0.0   1.0   0.0   0.0   0.0   0.0   
+0.0   0.0   1.0   0.0   0.0   0.0   
+0.0   0.0   0.0   1.0   0.0   0.0   
+0.0   0.0   0.0   0.0   1.0   0.0   
+0.0   0.0   0.0   0.0   0.0   1.0   
+
+2) No Solutions:
+~input:
+7
+7
+1 2 3 4 5 6 7
+1 2 3 4 5 6 7
+1 2 3 4 5 6 7
+1 2 3 4 5 6 7
+1 2 3 4 5 6 7
+1 2 3 4 5 6 7
+1 2 3 4 5 6 7
+1
+2
+3
+4
+5
+6
+7
+~output:
+The are no solutions.
+
+3) One Solution:
+~input:
+7
+7
+1 0 0 0 0 0 0
+0 1 0 0 0 0 0
+0 0 1 0 0 0 0
+0 0 0 1 0 0 0
+0 0 0 0 1 0 0
+0 0 0 0 0 1 0
+0 0 0 0 0 0 1
+1
+2
+3
+4
+5
+6
+7
+~output:
+There is one solution: (The nullspace is trivial: {0})
+1.0
+2.0
+3.0
+4.0
+5.0
+6.0
+7.0

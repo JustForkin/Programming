@@ -1,0 +1,44 @@
+<?php 
+//	session_start();
+	include "code_chart.php";
+//	checkLogin();   
+	
+	$username=$_POST['username'];
+	$password=$_POST['password'];
+	$month=$_POST['month'];
+	$day = $_POST['day'];
+	$year = $_POST['year'];
+	$meal=$_POST['meal'];
+
+	$username=stripslashes($username);
+	$password=stripslashes($password);
+	$month=stripslashes($month);
+	$day=stripslashes($day);
+  	$year=stripslashes($year);
+	$meal=stripslashes($meal);
+
+	$date = "$month/$day/$year";
+
+	//check if all forms are filled
+	if(isset($_POST['reserve'])){
+		if(empty($username)) 
+		{
+			master_redirect("Messages.php?msg=8");
+			exit();
+		}
+		if(empty($password)) 
+		{
+			master_redirect("Messages.php?msg=9");
+			exit();
+		}
+			
+//		loginUser($username, $password); //calls loginUser function
+		//MAKE THIS FUNCTION BELOW  ****
+		reserveMeal($username, $password, $meal,  $date);
+	//	master_redirect("ReserveKitchen.php"); //
+		//echo "hi"; 
+	}
+	
+//	else master_redirect("ReserveKitchen.php");  //if got to page without  hitting button
+
+?>

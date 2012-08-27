@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+
+public class Game {
+	
+	public Game() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("1 for Human vs. Computer; 2 for Computer vs. Computer.");
+		int gameType = sc.nextInt();
+		if (gameType == 1)
+		{
+			Player player1 = new Player();
+			System.out.print("Enter computer threshold: ");
+			Player player2 = new Player(sc.nextDouble());
+		}
+		else
+		{
+			System.out.print("Enter computer 1 threshold: ");
+			Player player1 = new Player(sc.nextDouble());
+			System.out.print("Enter computer 2 threshold: ");
+			Player player2 = new Player(sc.nextDouble());
+		}
+	}
+}

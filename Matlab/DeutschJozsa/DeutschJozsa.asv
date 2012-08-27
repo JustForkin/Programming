@@ -1,0 +1,84 @@
+function [ ret ] = DJ( isBalanced, n )
+%UNTITLED2 Summary of this function goes here
+%   Detailed explanation goes here
+
+%     if ( random('Normal', 0.5) < 0.5 )
+%         const = 0;
+%     else const = 1;
+%     end
+    
+    size = 2^n;
+    
+    state0 = [1; 0];
+    state1 = [0; 1];
+    
+    I = [1 0; 0 1];
+    X = [0 1; 1 0];
+    
+    function [ mat ] = A( isI )
+        if isI == 0
+            mat = I;
+        else mat = X;
+        end
+    end
+    
+    H = [1 1; 1 -1]/2^.5;
+    Hn = H;
+    for i = 1:n-1
+        Hn = kron(Hn, H);
+    end
+    
+    top = state0;
+    for i = 1:n-1
+        top = kron(top, state0);
+    end
+    bot = state1;
+    
+    top = (Hn*top)
+    bot = (H*bot)
+    
+    Uf = zeros(2*size, 2*size);
+    for j = 1:size
+        Utemp = zeros(2*size, 2*size);
+        %tempF = F(j);
+        tempA = A(F(j));
+        Utemp(2*j-1,2*j-1) = tempA(1,1);
+        Utemp(2*j-1,2*j) = tempA(1,2);
+        Utemp(2*j,2*j-1) = tempA(2,1);
+        Utemp(2*j,2*j) = tempA(2,2);
+        Uf = Uf + Utemp;
+    end
+    
+    Uf
+    both = kron(top, bot)
+    both = Uf*both;
+    
+    both = kron(Hn,I)*both
+    
+    meas = zeros(size);
+    meas(1,1) = 1;
+    ret = both(1,1)
+    
+    function [ fn ] = F( jj )
+        if(isBalanced == true)
+            fn = balanced( jj );
+        else 
+            fn = constant0( jj );
+        end
+    end
+
+    function [ ret ] = constant0( i ) %argument just for convenience
+        ret = 0;
+    end
+
+    function [ ret ] = constant1( i )
+        ret = 1;
+    end
+
+    function [ ret ] = balanced( i )
+        ret = mod(i,2); 
+    end
+    
+
+end
+

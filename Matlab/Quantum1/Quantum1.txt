@@ -1,0 +1,27 @@
+Michael Rubin   -   mnr2114   -   2/12/12
+Quantum Computing, Assignment 1, Programming
+
+
+To run my MATLAB program, navigate to within the Quantum1 directory 
+and type 'matlab' to run matlab.
+From within the matlab prompt, type
+
+Quantum1Tester
+
+to run my script, which will display test cases.
+To test specific input, either edit the QUantum1Tester script or run my
+
+Quantum1(j, k, m);
+
+function with your own j, k, and m.
+(If you try to run my program from within cunix but not from  within the matlab prompt
+it may not work).
+
+
+My program runs in time linear to k, because it solves the problem as follows:
+It calculates   <j1 j2 j3...jk | X1 X2 X3...Xk | m1 m2 m3...mk>  by 
+computing the product of
+<j1 | X1 | m1> * <j2 | X2 | m2> * <j3 | X3 | m3> * ... *  <jk | Xk | mk>
+where each individual inner product takes constant time relative to k,
+and this is performed k times. (the only for-loop in the code runs till k).
+The results are multiplied in k time and the result is complex-magnituded and squared.

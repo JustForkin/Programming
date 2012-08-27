@@ -1,0 +1,20 @@
+To compile and run my (JAVA) program in cunix, navigate to the KDiagonal/src directory 
+(or wherever you choose to put the .java and text [input/README/etc] files)
+and then type:
+	javac *.java
+and then
+	java KDiagTester inputFile outputFile
+where 'inputFile' is the file containing your n,k,[A|b] and 'outputFile' is where
+the solution will be put
+(it will also be printed to the console, in addition to steps along the way).
+(The input_file is formatted the same way as on the last assignment.)
+
+I created 2 inputFiles (inputFile & inputFile2) so you can test the cases of n=5 and k=3,5
+	
+My program's main method creates a k-diagonal square augmented matrix. It then performs
+elimination [which costs O(n)] and back substitution on it [which costs O(n)] to
+produce the solution to the system. Because the matrices are k-diagonal, elim and
+back-sub cost less they would normally for an unbounded matrix O(n^3) and O(n^2)
+respectively.  My program then prints the solution and steps along the way to the
+console, as well as outputs the solution to a text file specified in the last commandline argument.
+(For more info on the code, see the javadoc and comments.)

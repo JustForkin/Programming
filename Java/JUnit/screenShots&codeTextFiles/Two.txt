@@ -1,0 +1,113 @@
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+/**
+ * 
+ */
+
+/**
+ * @author Michael
+ *
+ */
+public class SavingsAccountTest {
+
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	/**
+	 * Test method for {@link SavingsAccount#SavingsAccount(java.lang.String, double)}.
+	 */
+	@Test
+	public void testSavingsAccount() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link SavingsAccount#getName()}.
+	 */
+	@Test
+	public void testGetName() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link SavingsAccount#getBalance()}.
+	 */
+	@Test
+	public void testGetBalance() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link SavingsAccount#getRate()}.
+	 */
+	@Test
+	public void testGetRate() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link SavingsAccount#getTransactions()}.
+	 */
+	@Test
+	public void testGetTransactions() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link SavingsAccount#withdraw(double)}.
+	 */
+	@Test
+	public void testWithdraw() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link SavingsAccount#deposit(double)}.
+	 */
+	@Test
+	public void testDeposit() {
+		fail("Not yet implemented");
+	}
+
+	/**
+	 * Test method for {@link SavingsAccount#accrueInt()}.
+	 */
+	@Test
+	public void testAccrueInt() {
+		fail("Not yet implemented");
+	}
+	
+	/**
+	 *  Test sequence 1
+	 */
+	@Test
+	public void testSeq1()
+	{
+		fail("Not yet implemented");
+	}
+	
+	/**
+	 *  Test sequence 2
+	 */
+	@Test
+	public void testSeq2()
+	{
+		fail("Not yet implemented");
+	}
+	
+}

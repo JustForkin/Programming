@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+
+public class EvenOddTester {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		System.out.println("How many rounds do you want to play?");
+		Scanner sc = new Scanner(System.in);
+		long rounds = sc.nextLong();
+		Game myGame = new Game();
+		myGame.playGame(rounds);
+
+	}
+
+}

@@ -1,0 +1,16 @@
+#tblBoard
+{
+	border: yellow solid 5px;
+	border-spacing:0;
+	margin-left: 50px;
+}
+#tblBoard tr
+{
+}
+#tblBoard tr td
+{
+	border: yellow solid 5px;
+	border-spacing:0px;
+	width: 30px;
+	height: 20px;
+}

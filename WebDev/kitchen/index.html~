@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="en-us" http-equiv="Content-Language" />
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>The official Ruggelach© website</title>
+<style type="text/css">
+.style1 {
+	font-weight: normal;
+}
+</style>
+</head>
+
+<body style="background-color: #75B2DD; background-attachment: fixed">
+
+<h1>The official Ruggelach<sup><span class="style1">&copy</span></sup> website</h1>
+
+<a href="./ReserveKitchen.php">
+
+<img height="90%" src="photo1.JPG" width="90%" alt="group photo" title = "Click here to reserve kitchen!" /></a>
+
+</body>
+
+</html>

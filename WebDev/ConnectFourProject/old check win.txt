@@ -1,0 +1,124 @@
+<?php
+//1. Check to see if either Red or Black has won vertically
+	for ($column = 0; $column < $colSize; $column++)
+	{
+		
+		for ($row=0; $row <= ($rowSize - $neededToWin); $row++) { 
+			$SQL = "SELECT Val FROM Boards WHERE (Col = " . $column . ") AND (";
+			for ($pivot = $row; $pivot < $row + $neededToWin - 1; $pivot++) {
+				$SQL .= "Row = " . $pivot;
+				if(($pivot + 1) < $row + $neededToWin - 1) //Is the loop going happen again?
+					$SQL .= " OR ";
+				else
+					$SQL .= ")";
+			}
+			$result = runSQLQuery($SQL, false);
+			$firstSpot = $result[0][0];
+			if ($firstSpot == 'B')
+			{
+				$blackWon = true;
+				for ($i = 0; $i < sizeof($result); $i++)
+					if ($result[$i][0] != 'B')
+						$blackWon = false;
+				if($blackWon)
+					return 'B';
+			}
+			else if (firstSpot == 'R')
+			{
+				$redWon = true;
+				for ($i = 0; $i < sizeof($result); $i++)
+					if ($result[$i][0] != 'R')
+						$redWon = false;
+				if($redWon)
+					return 'R';
+			}
+				
+		}
+
+	}
+	//2. Check to see if either Red or Black has won horizontally
+	for ($row = 0; $row < $rowSize; $row++)  //loops through every row b/c we're checking if they won within each row
+	{
+		
+		for ($col=0; $col <= ($colSize - $neededToWin); $col++) {    //looping thru columns but leaving out the part at the end of each row which gets cut off
+			$SQL = "SELECT Val FROM Boards WHERE (Row = " . $row . ") AND ("; //selects horizontal wins for each row
+			for ($pivot = $col; $pivot < $col + $neededToWin - 1; $pivot++) {  //adding 1 to pivot
+				$SQL .= "Col = " . $pivot;  //adding to $SQL col=x AND,col=x+1,x+2,x+3  starting with place in row dependent on column number
+				if(($pivot + 1) < $col + $neededToWin - 1) //Is the loop going happen again?
+					$SQL .= " OR ";
+				else
+					$SQL .= ")";
+			}
+			$result = runSQLQuery($SQL, false);   //returns a single spot which is the beginning of each horizontal stretch of 4 depending on column and row
+			$firstSpot = $result[0][0];  // takes the beginning of each horizontal stretch of 4 depending on column and row
+			if ($firstSpot == 'B')  //checks win using $result which is single spot (beginning of each horiz stretch of 4 depending on row and col
+			{
+				$blackWon = true;
+				for ($i = 0; $i < sizeof($result); $i++)
+					if ($result[$i][0] != 'B')   //check the 4 spots after (and including) each beginning spot
+						$blackWon = false;
+				if($blackWon)
+					return 'B';
+			}
+			else if ($firstSpot == 'R')
+			{
+				$redWon = true;
+				for ($i = 0; $i < sizeof($result); $i++)
+					if ($result[$i][0] != 'R')
+						$redWon = false;
+				if($redWon)
+					return 'R';
+			}
+				
+		}
+
+	}
+	/*
+	//3. Check to see if either Red or Black has won diagonally (Sloping up)
+	for ($col=0; $col <= ($colSize - $neededToWin); $col++) { 
+		for ($row=0; $row <= ($rowSize - $neededToWin); $row++) { 
+			$SQL = "SELECT Val FROM Boards WHERE (Row = " . $row . ") AND (Col = " . $col . ") OR (";
+			for ($pivot = $col, $pivotb = $row; $pivot < $col + $neededToWin - 1; $pivot++, $pivotb++) {  
+				$SQL .= "Col = " . $pivot . "AND Row = " . $pivotb;
+				if(($pivot + 1) < $col + $neededToWin - 1) //Is the loop going happen again?
+					$SQL .= " AND ";
+				else
+					$SQL .= ")";
+			}		
+			$result = runSQLQuery($SQL, false);   
+			$firstSpot = $result[0][0];	
+			if($firstSpot == 'B')
+			{
+				$blackWon = true;
+				for ($i = 0; $i < sizeof($result); $i++)
+					if ($result[$i][0] != 'B')   
+						$blackWon = false;
+				if($blackWon)
+					return 'B';
+			}
+			else if (firstSpot == 'R')
+			{
+				$redWon = true;
+				for ($i = 0; $i < sizeof($result); $i++)
+					if ($result[$i][0] != 'R')
+						$redWon = false;
+				if($redWon)
+					return 'R';
+			}
+		}
+	}
+	*/
+	
+	//4. Check to see if either Red or Black has won diagonally (Sloping down)
+	
+		//If anyone has won in step 1-4 return "B" or "R".
+		
+	//5. Assuming nobody has won make sure that there is still space left on the board (i.e. the game is not over)
+		//This should be done with one simple query
+		//If the game is over, return "T" (for "tie")
+		
+	$result = runSQLQuery("SELECT Val FROM Boards WHERE Val = 'w'", false);
+	if (sizeof($result) == 0)   //There is no blank space returned
+		return "T";
+	
+		?>

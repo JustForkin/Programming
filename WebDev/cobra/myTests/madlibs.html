@@ -1,0 +1,67 @@
+<html>
+	<body>
+	
+		<!-- form that users inputs words into-->
+		<form method="get"  name="myform"  >
+			relative's name:<input type="text" name="name1" /><br />
+			adjective:<input type="text" name="adj1" /><br />
+			adjective:<input type="text" name="adj2" /><br />
+			adjective:<input type="text" name="adj3" /><br />
+			person:<input type="text" name="name2" /><br />
+			adjective:<input type="text" name="adj4" /><br />
+			adjective:<input type="text" name="adj5" /><br />
+			verb ending in -ed:<input type="text" name="verb1" /><br />
+			body part:<input type="text" name="limb" /><br />
+			verb ending in -ing:<input type="text" name="verb2" /><br />
+			noun (pl):<input type="text" name="noun1" /><br />
+			noun:<input type="text" name="noun2" /><br />
+			adverb:<input type="text" name="adverb" /><br />
+			verb:<input type="text" name="verb3" /><br />
+			verb:<input type="text" name="verb4" /><br />
+			relative:<input type="text" name="name4" /><br />
+			name:<input type="text" name="name5" /><br />
+			<input type="button"  value="done!" onClick="fillIn()" />
+		</form>
+		
+		
+		<!--STORY-->
+		<div id="story" style="visibility:hidden"> 
+		    Dear <span id="name1"></span>,
+			<br />I am having a(n) <span id="adj1"></span> time at camp. The counselour is <span id="adj2"></span> and the food is 
+			<span id="adj3"></span>. I met <span id="name2"></span> and we became <span id="adj4"></span> friends. Unfortunately, <span id="name3"></span>
+			is <span id="adj5"></span> and I <span id="verb1"></span> my <span id="limb"></span> so we couldn`t go <span id="verb2"></span> like everybody else. 
+			I need more <span id="noun1"></span> and a <span id="noun2"></span> sharpener, so please <span id="adverb"></span> 
+			<span id="verb3"></span> more when you <span id="verb4"></span> back.
+			<br />Your <span id="name4"></span>,
+			<br /><span id="name5"></span>
+		</div>
+		
+		
+		<!-- function that displays the story-->
+		<script language="javascript" style="text/javascript">  
+			function fillIn() 
+			{
+			document.getElementById("story").style.visibility="visible";
+			document.getElementById("name1").innerHTML = document.myform.name1.value;
+			document.getElementById("adj1").innerHTML = document.myform.adj1.value;
+			document.getElementById("adj2").innerHTML = document.myform.adj2.value;
+			document.getElementById("adj3").innerHTML = document.myform.adj3.value;
+			document.getElementById("name2").innerHTML = document.myform.name2.value;
+			document.getElementById("adj4").innerHTML = document.myform.adj4.value;
+			document.getElementById("adj5").innerHTML = document.myform.adj5.value;
+			document.getElementById("name3").innerHTML = document.myform.name2.value;
+			document.getElementById("verb1").innerHTML = document.myform.verb1.value;
+			document.getElementById("limb").innerHTML = document.myform.limb.value;
+			document.getElementById("verb2").innerHTML = document.myform.verb2.value;
+			document.getElementById("noun1").innerHTML = document.myform.noun1.value;
+			document.getElementById("noun2").innerHTML = document.myform.noun2.value;
+			document.getElementById("adverb").innerHTML = document.myform.adverb.value;
+			document.getElementById("verb3").innerHTML = document.myform.verb3.value;
+			document.getElementById("verb4").innerHTML = document.myform.verb4.value;
+			document.getElementById("name4").innerHTML = document.myform.name4.value;
+			document.getElementById("name5").innerHTML = document.myform.name5.value;
+			}
+			
+			</script>
+	</body>
+</html>

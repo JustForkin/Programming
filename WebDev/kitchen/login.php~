@@ -1,0 +1,33 @@
+<?php 
+//	session_start();
+	include "code_chart.php";
+//	checkLogin();   
+	
+	$username=$_POST['username'];
+	$password=$_POST['password'];
+	
+	$username=stripslashes($username);
+	$password=stripslashes($password);
+
+	//check if all forms are filled
+	if(isset($_POST['reserve'])){
+		if(empty($username)) 
+		{
+			master_redirect("Messages.php?msg=8");
+			exit();
+		}
+		if(empty($password)) 
+		{
+			master_redirect("Messages.php?msg=9");
+			exit();
+		}
+			
+//		loginUser($username, $password); //calls loginUser function
+		//reserveMeal($username, $password,
+		master_redirect("ReserveKitchen.php"); //
+		//echo "hi"; 
+	}
+	
+	else master_redirect("ReserveKitchen.php");
+
+?>

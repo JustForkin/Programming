@@ -1,0 +1,8 @@
+import java.util.Scanner;
+
+
+public class Game {
+	//Scanner sc = new Scanner(System.in);
+	System.out.print("Pick 1 or 2: ");
+	
+}
